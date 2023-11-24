@@ -8,9 +8,10 @@ app.use(cors());
 app.get('/', (request, response) => {
     response.json({
         data: {
-            productName: 'spatu olahraga',
-            price: 20000,
-            image_url: "https://images.unsplash.com/photo-1562183241-b937e95585b6?q=80&w=1530&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
+            id: 1,
+            type_room: "standar room",
+            price: "700000",
+            image_url: "https://asset.kompas.com/crops/SmXa-KlIkF_MVULGBN7IzlIyV1g=/4x0:904x600/750x500/data/photo/2022/12/09/639342fd0b5a8.jpg"},
         message: "data succesfully retrived!"
     });
 });
