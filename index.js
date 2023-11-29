@@ -1,21 +1,16 @@
-import express from "express";
+import express  from "express";
+import bodyParser from "body-parser";
+import roomRoutes from "./routes/room-routes.js";
 import cors from "cors";
-
 const app = express();
 const port = 3000;
 
-app.use(cors());
-app.get('/', (request, response) => {
-    response.json({
-        data: {
-            id: 1,
-            type_room: "standar room",
-            price: "700000",
-            image_url: "https://asset.kompas.com/crops/SmXa-KlIkF_MVULGBN7IzlIyV1g=/4x0:904x600/750x500/data/photo/2022/12/09/639342fd0b5a8.jpg"},
-        message: "data succesfully retrived!"
-    });
-});
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
-app.listen(port,()=> {
+app.use(cors());
+app.use("/room", roomRoutes);
+
+app.listen(4000, () => {
     console.log(`server is running at port ${port}`);
 });
