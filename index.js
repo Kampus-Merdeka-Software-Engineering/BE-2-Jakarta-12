@@ -1,7 +1,7 @@
 import express  from "express";
 import bodyParser from "body-parser";
 import roomRoutes from "./routes/room-routes.js";
-import { starSequelize } from "./utils/starttSequelize.js";
+import { starSequelize } from "./utils/startSequelize.js";
 import Room from "./models/room-models.js";
 import cors from "cors";
 const app = express();
