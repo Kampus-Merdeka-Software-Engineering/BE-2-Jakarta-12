@@ -1,15 +1,16 @@
 import express  from "express";
 import bodyParser from "body-parser";
 import { starSequelize } from "./utils/startSequelize.js";
-
+import dotenv from "dotenv"
 // import routes
 import bookingRoutes from "./routes/booking-routes.js"
 import roomRoutes from "./routes/room-routes.js"
 
+dotenv.config()
 import cors from "cors";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -30,6 +31,6 @@ app.use((err, req, res, next) =>{
 
 starSequelize()
 // menjalankan server
-app.listen(4000, () => {
+app.listen(port, () => {
     console.log(`server is running at port ${port}`);
 });
