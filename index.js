@@ -19,6 +19,15 @@ app.use(express.static("public"))
 app.use("/room", roomRoutes);
 app.use("/booking", bookingRoutes)
 
+app.use((err, req, res, next) =>{
+    if(res.headersSent){
+        return next(err)
+    }
+    res.status(500).json({
+        message: 'internar server error'
+    })
+})
+
 starSequelize()
 // menjalankan server
 app.listen(4000, () => {
