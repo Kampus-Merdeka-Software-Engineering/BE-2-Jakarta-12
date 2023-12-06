@@ -11,3 +11,9 @@ export const getRoomList = async(req, res) => {
         message: "sukses mengambil data"
     })
 }
+
+export const postRoomItem = async(req, res) => {
+    const {type_room, description, price, room_image} = req.body 
+    const room = await createRoom(type_room, description, price, room_image)
+    res.json(room)
+}
