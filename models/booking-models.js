@@ -10,7 +10,7 @@ const Booking = sequelize.define("databookings", {
     adults: DataTypes.INTEGER,
     childern: DataTypes.INTEGER,
     rooms: DataTypes.INTEGER,
-    type_room: DataTypes.INTEGER,
+    type_room: DataTypes.STRING,
 
 })
 
