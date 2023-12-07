@@ -12,7 +12,7 @@ import cors from "cors";
 const app = express();
 const port = process.env.PORT;
 
-app.use(cors());
+// app.use(cors());
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://be-2-jakarta-12-production.up.railway.app');
