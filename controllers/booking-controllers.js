@@ -11,7 +11,7 @@ export const getBooking = async(req, res) => {
 
 // post booking
 export const postBookingItem = async(req, res) => {
-    const {name, email, check_in, check_out, adults, childern, rooms, type_room} = req.body 
-    const booking = await createDataBooking(name, email, check_in, check_out, adults, childern, rooms, type_room)
+    const {name, email, check_in, check_out, adults, children, rooms, type_room} = req.body 
+    const booking = await createDataBooking(name, email, check_in, check_out, adults, children, rooms, type_room)
     res.json(booking)
 }

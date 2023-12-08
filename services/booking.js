@@ -5,14 +5,14 @@ export const readBooking = async() => {
 }
 
 // menambahkan data booking
-export const createDataBooking = async(name, email, check_in, check_out, adults, childern, rooms, type_room) => {
+export const createDataBooking = async(name, email, check_in, check_out, adults, children, rooms, type_room) => {
     return await Booking.create({
         name,
         email,
         check_in,
         check_out,
         adults,
-        childern,
+        children,
         rooms,
         type_room
     })
